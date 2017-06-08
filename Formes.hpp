@@ -19,7 +19,7 @@ class Formes {
 		void ajouter(Forme * forme);
 		Forme * isOver(uint x, uint y);
 		void dessiner(EZWindow & fenetre);
-		friend ostream operator<<(ostream &os, Point p);
+		friend ostream &operator<<(ostream &os, const Formes &f);
 		void sauver(ostream &os) const;
 		void charger(istream &is);
 };

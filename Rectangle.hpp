@@ -1,6 +1,6 @@
 #ifndef RECTANGLE_HPP
 #define RECTANGLE_HPP
-#include "MyWindow.cpp"
+
 #include "Forme.hpp"
 
 typedef unsigned int uint;
@@ -11,16 +11,16 @@ class Rectangle : public Forme {
 		uint largeur;
 		uint hauteur;
 		void ecrire(ostream & os) const override;
+
 	public:
-		Rectangle(ulong couleur, uint x, uint y, uint largeur, uint hauteur);
+		Rectangle(ulong _couleur, uint _x, uint _y, uint _largeur, uint _hauteur);
 		Rectangle(istream & is);
 		~Rectangle();
-		virtual void dessiner(EZWindow & fenetre, bool isActive=false);
-		inline uint getLongueur() const {return largeur};
-		inline uint setLargeur(uint _largueur) {return largueur};
-		inline void setLargeur(uint _largeur) {largueur= _largeur};
-		inline uint getHauteur() const {return hauteur};
-		inline void setHauteur(uint _hauteur) {hauteur = _lhauteur};
-		void double perimetre() const override;
+		virtual void dessiner(EZWindow & fenetre, bool isActive=false) {};
+		inline uint getLargeur() const { return largeur; }
+		inline void setLargeur(uint _largeur) { largeur = _largeur; }
+		inline uint getHauteur() const { return hauteur; }
+		inline void setHauteur(uint _hauteur) { hauteur = _hauteur; }
+		double perimetre() const override {};
 };
 #endif

@@ -23,7 +23,7 @@ all :: $(EXECSPP)
 	$(CXX) -c $(CXXFLAGS) $*.cpp
 
 
-Formes : main.o Point.o Forme.o Rectangle.o Carre.o Cercle.o Ellipse.o Formes.o MyWindow.o ez-draw++.o
+Formes : main.o Point.o Forme.o Rectangle.o Formes.o MyWindow.o ez-draw++.o
 	$(CXX) -o $@ $^ $(LIBS)
 
 depends :
@@ -36,4 +36,3 @@ distclean :: clean
 	$(RM) *% *~ .*.swp $(EXECSPP)
 
 include depends
-

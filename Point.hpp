@@ -16,15 +16,15 @@ class Point {
 
 	public:
 		Point(uint x, uint y);
-		~Point();
 		Point(const Point& orig);
 		Point(istream& is);
+		~Point();
 		inline int getX() const {return x;};
 		inline int getY() const {return y;};
-		void setXY(uint x, uint y);
+		inline void setXY(uint _x, uint _y) { x = _x; y = _y; }
 		bool isOver(uint x, uint y) const;
 		void dessiner(EZWindow& w, bool isActive=false) const;
-		friend ostream operator<<(ostream& os, Point p);
-		friend ostream operator>>(istream& is, Point& p);
+		friend ostream &operator<<(ostream& os, const Point &p);
+		friend istream &operator>>(istream& is, Point& p);
 };
 #endif

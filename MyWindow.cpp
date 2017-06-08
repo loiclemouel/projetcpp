@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "MyWindow.hpp"
 #include "Point.hpp"   // Uniquement pour le constructeur qui peuple la fenêtre
 
 using namespace std;
@@ -52,7 +53,9 @@ void MyWindow::keyPress(EZKeySym keysym) // Une touche du clavier a ete enfoncee
   switch (keysym)
     {
      case EZKeySym::Escape:
-     case EZKeySym::q :       EZDraw::quit (); break;
+     case EZKeySym::q:
+      EZDraw::quit ();
+      break;
      case EZKeySym::E:
       cout << formes;
       break;
@@ -100,9 +103,9 @@ void MyWindow::keyPress(EZKeySym keysym) // Une touche du clavier a ete enfoncee
            ;
       break;
      case EZKeySym::r: formes.ajouter(new Rectangle(ez_black,getWidth()/2-25,getHeight()/2-25,getWidth()/2+25,getHeight()/2+25)); break;
-     case EZKeySym::e: formes.ajouter(new Ellipse(ez_black,getWidth()/2-25,getHeight()/2-15,50,30)); break;
-     case EZKeySym::s: formes.ajouter(new Carre(ez_black,getWidth()/2-25,getHeight()/2-25,50)); break;
-     case EZKeySym::c: formes.ajouter(new Cercle(ez_black,getWidth()/2-25,getHeight()/2-25,25)); break;
+     //case EZKeySym::e: formes.ajouter(new Ellipse(ez_black,getWidth()/2-25,getHeight()/2-15,50,30)); break;
+     //case EZKeySym::s: formes.ajouter(new Carre(ez_black,getWidth()/2-25,getHeight()/2-25,50)); break;
+     //case EZKeySym::c: formes.ajouter(new Cercle(ez_black,getWidth()/2-25,getHeight()/2-25,25)); break;
 //     case EZKeySym::t: formes.ajouter(new Triangle(ez_black,getWidth()/2,getHeight()/2-50,getWidth()/2-25,getHeight()/2-30,getWidth()/2+25,getHeight()/2-30)); break;
      default:
       break;

@@ -36,3 +36,12 @@ void Point::dessiner(EZWindow& w, bool isActive) const
 	else
 		w.drawRectangle(x-taille, y-taille, x+taille, y+taille);
 }
+
+ostream &operator<<(ostream& os, const Point &p)
+{
+	return os << p.x <<  " " << p.y;
+}
+istream &operator>>(istream& is, Point& p)
+{
+	return is >> p.x >> p.y;
+}

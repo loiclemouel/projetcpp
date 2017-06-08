@@ -49,7 +49,7 @@ void Formes::sauver(ostream& os) const
 		os << *formes[i] << endl;
 }
 
-void Forme::charger(istream& is)
+void Formes::charger(istream& is)
 {
 	for(size_t i=0 ; i<nbFormes ; i++)
 		delete formes[i];
@@ -59,4 +59,10 @@ void Forme::charger(istream& is)
 	if(combien < maxFormes)
 		for(size_t i=0 ; i < combien ; i++)
 			ajouter(Forme::charger(is));
+}
+
+ostream &operator<<(ostream &os, const Formes &f)
+{
+	f.sauver(os);
+	return os;
 }

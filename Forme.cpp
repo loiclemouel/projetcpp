@@ -1,5 +1,6 @@
 #include "Forme.hpp"
 #include "Rectangle.hpp"
+
 Forme::Forme(ulong _couleur, uint _x, uint _y)
 	: couleur(_couleur), ancre(_x, _y)
 {
@@ -65,5 +66,6 @@ Forme * Forme::charger(istream& is)
 		//return new Cercle(is);
 	//}
 	else {
-		throw runtime_error("Type de forme inconnu");}
+		throw runtime_error("Type de forme inconnu");
+	}
 }
