@@ -14,11 +14,11 @@ Formes::~Formes()
 	delete[] formes;
 }
 
-void Formes::ajouter(Forme *f)
+void Formes::ajouter(Forme *forme)
 {
   if (nbFormes < maxFormes)
   {
-    formes[nbFormes++]=f;
+    formes[nbFormes++]=forme;
   }
   else
   {
@@ -63,6 +63,7 @@ void Formes::charger(istream& is)
 
 ostream &operator<<(ostream &os, const Formes &f)
 {
-	f.sauver(os);
-	return os;
+	for (uint i=0; i < f.nbFormes; i++)
+	os << *f.formes[i] << endl;
+    return os;
 }

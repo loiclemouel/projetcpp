@@ -15,15 +15,15 @@ class Forme {
 		bool selected;
 
 	public:
-		Forme(ulong _couleur, uint _x, uint _y);
-		Forme(const Forme& origine);
+		Forme(ulong couleur, uint x, uint y);
+		Forme(const Forme& orig);
 		Forme(istream& is);
 		virtual ~Forme();
 		inline ulong getCouleur() const {return couleur;}
 		inline void setCouleur(ulong _couleur) { couleur = _couleur; }
 		inline const Point getAncre() const {return ancre;}
-		inline void setAncre(uint x, uint y) { ancre.setXY(x, y); }
-		bool isOver (uint x, uint y) const;
+		inline void setAncre(uint _x, uint _y) { ancre.setXY(_x, _y); }
+		bool isOver (uint _x, uint _y) const;
 		virtual void dessiner(EZWindow & fenetre, bool active=false) const;
 		virtual double perimetre() const=0;
 		virtual void ecrire(ostream  &os) const;

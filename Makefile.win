@@ -23,7 +23,7 @@ all :: $(EXECSPP)
 	$(CXX) -c $(CXXFLAGS) $*.cpp
 
 
-Formes.exe : main.o point.o forme.o rectangle.o formes.o myWindow.o ez-draw++.o
+Formes.exe : main.o Point.o Forme.o Rectangle.o Ellipse.o Formes.o MyWindow.o ez-draw++.o
 	$(CXX) -o $@ $^ $(LIBS)
 
 depends :

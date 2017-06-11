@@ -16,11 +16,11 @@ class Rectangle : public Forme {
 		Rectangle(ulong _couleur, uint _x, uint _y, uint _largeur, uint _hauteur);
 		Rectangle(istream & is);
 		~Rectangle();
-		virtual void dessiner(EZWindow & fenetre, bool isActive=false) {};
+		virtual void dessiner(EZWindow & fenetre, bool isActive=false) const;
 		inline uint getLargeur() const { return largeur; }
 		inline void setLargeur(uint _largeur) { largeur = _largeur; }
 		inline uint getHauteur() const { return hauteur; }
 		inline void setHauteur(uint _hauteur) { hauteur = _hauteur; }
-		double perimetre() const override {};
+		double perimetre() const override ;
 };
 #endif

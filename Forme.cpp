@@ -1,16 +1,16 @@
 #include "Forme.hpp"
 #include "Rectangle.hpp"
 
-Forme::Forme(ulong _couleur, uint _x, uint _y)
-	: couleur(_couleur), ancre(_x, _y)
+Forme::Forme(ulong _couleur, uint x, uint y)
+	: couleur(_couleur), ancre(x, y)
 {
-		cerr << "" << endl;
+		cerr << "creation forme" << endl;
 }
 
-Forme::Forme(const Forme& origine)
-	: couleur(origine.couleur), ancre(origine.ancre)
+Forme::Forme(const Forme& orig)
+	: couleur(orig.couleur), ancre(orig.ancre)
 {
-		cerr << "" << endl;
+		cerr << "creation copie forme" << endl;
 }
 
 Forme::Forme(istream& is)
@@ -23,19 +23,19 @@ Forme::Forme(istream& is)
 
 Forme::~Forme()
 {
-		cerr << "" << endl;
+		cerr << "destruction de forme" << endl;
 }
 
-bool Forme::isOver(uint x, uint y) const
+bool Forme::isOver(uint _x, uint _y) const
 {
-		return ancre.isOver(x,y);
+		return ancre.isOver(_x,_y);
 }
 
-void Forme::dessiner(EZWindow& w, bool isActive) const
+void Forme::dessiner(EZWindow& fenetre, bool isActive) const
 {
-	w.setColor(ez_black);
-	ancre.dessiner(w, isActive);
-	w.setColor(couleur);
+	fenetre.setColor(ez_black);
+	ancre.dessiner(fenetre, isActive);
+	fenetre.setColor(couleur);
 }
 
 void Forme::ecrire(ostream& os) const
@@ -56,9 +56,9 @@ Forme * Forme::charger(istream& is)
 	if(type_forme == "Rectangle") {
 		return new Rectangle(is);
 	}
-	// else if(type_forme == "Ellipse") {
-	// 	return new Ellipse(is);
-	// }
+   /* else if(type_forme == "Ellipse") {
+	 	return new Ellipse(is);
+	}*/
 	// else if(type_forme == "Carré") {
 	// 	return new Carre(is);
 	// }
