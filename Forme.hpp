@@ -12,15 +12,22 @@ class Forme {
 	private:
 		ulong couleur;
 		Point ancre;
-		bool selected;
+		bool remplissage=false;
+		uint epaisseur;
 
 	public:
-		Forme(ulong couleur, uint x, uint y);
+		Forme(uint epaisseur,ulong couleur, uint x, uint y);
 		Forme(const Forme& orig);
 		Forme(istream& is);
 		virtual ~Forme();
 		inline ulong getCouleur() const {return couleur;}
 		inline void setCouleur(ulong _couleur) { couleur = _couleur; }
+		inline uint getEpaisseur() const {return epaisseur;}
+		inline void setEpaisseur(uint _epaisseur) {epaisseur = _epaisseur;}
+		inline void plusEpaisseur(){epaisseur++;}
+		inline void moinsEpaisseur(){epaisseur--;}
+		inline bool getRemplissage() const {return remplissage;}
+		inline void setRemplissage(bool _remplissage) {remplissage = _remplissage;}
 		inline const Point getAncre() const {return ancre;}
 		inline void setAncre(uint _x, uint _y) { ancre.setXY(_x, _y); }
 		bool isOver (uint _x, uint _y) const;

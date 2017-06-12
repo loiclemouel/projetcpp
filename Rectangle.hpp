@@ -13,7 +13,7 @@ class Rectangle : public Forme {
 		void ecrire(ostream & os) const override;
 
 	public:
-		Rectangle(ulong _couleur, uint _x, uint _y, uint _largeur, uint _hauteur);
+		Rectangle(uint _eppaisseur, ulong _couleur, uint _x, uint _y, uint _largeur, uint _hauteur);
 		Rectangle(istream & is);
 		~Rectangle();
 		virtual void dessiner(EZWindow & fenetre, bool isActive=false) const;

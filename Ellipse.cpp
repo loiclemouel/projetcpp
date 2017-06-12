@@ -1,7 +1,7 @@
 #include "Ellipse.hpp"
 
-Ellipse::Ellipse(ulong _couleur, uint _x, uint _y, uint _demilargeur, uint _demihauteur)
-	: Forme(_couleur, _x, _y), demilargeur(_demilargeur), demihauteur(_demihauteur)
+Ellipse::Ellipse(uint _epaisseur,ulong _couleur, uint _x, uint _y, uint _demilargeur, uint _demihauteur)
+	: Forme(_epaisseur,_couleur, _x, _y), demilargeur(_demilargeur), demihauteur(_demihauteur)
 {
 	cout << "Construction ellipse" << endl;
 }
@@ -32,5 +32,8 @@ void Ellipse::dessiner(EZWindow & fenetre, bool isactive) const
 {
   Forme::dessiner(fenetre, isactive);
   const Point & ancre = getAncre();
-  fenetre.drawCircle(ancre.getX(), ancre.getY(), ancre.getX() + demilargeur*2, ancre.getY() + demihauteur*2);
+  if(getRemplissage())
+	  fenetre.fillCircle(ancre.getX(), ancre.getY(), ancre.getX() + demilargeur*2, ancre.getY() + demihauteur*2);
+  else
+	  fenetre.drawCircle(ancre.getX(), ancre.getY(), ancre.getX() + demilargeur*2, ancre.getY() + demihauteur*2);
 }

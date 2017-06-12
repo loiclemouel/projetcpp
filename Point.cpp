@@ -31,12 +31,15 @@ bool Point::isOver(uint _x, uint _y) const
   return (dx <= taille && dy <= taille);
 }
 
-void Point::dessiner(EZWindow& w, bool isActive) const
+void Point::dessiner(EZWindow& fenetre, bool isActive) const
 {
+	fenetre.setColor(ez_black);
+	fenetre.setThick(1);
+	
 	if(isActive)
-		w.fillRectangle(x-taille, y-taille, x+taille, y+taille);
+		fenetre.fillRectangle(x-taille, y-taille, x+taille, y+taille);
 	else
-		w.drawRectangle(x-taille, y-taille, x+taille, y+taille);
+		fenetre.drawRectangle(x-taille, y-taille, x+taille, y+taille);
 }
 
 ostream &operator<<(ostream& os, const Point &p)
