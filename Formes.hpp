@@ -7,6 +7,8 @@
 
 using namespace std;
 
+
+
 class Formes {
 	private:
 		size_t maxFormes;

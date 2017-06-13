@@ -24,7 +24,7 @@ void Carre::ecrire(ostream & os) const
 {
   os << "Carre";
   Forme::ecrire(os);
-  os << longueur;
+  os << " "<<longueur;
 }
 
 void Carre::dessiner(EZWindow & fenetre, bool isActive) const

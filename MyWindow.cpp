@@ -48,9 +48,10 @@ void MyWindow::motionNotify(int mouse_x,int mouse_y,int button)
 
 void MyWindow::buttonRelease(int mouse_x,int mouse_y,int button)
 {
- if(button == 1 && pforme != nullptr) // Si on clique sur l'ancre d'une forme
-   pforme->setAncre(mouse_x,mouse_y); 
- sendExpose();
+// if(button == 1 && pforme != nullptr) // Si on clique sur l'ancre d'une forme
+ //  pforme->setAncre(mouse_x,mouse_y);
+// sendExpose();
+//pforme=nullptr;
 }
 
 void MyWindow::keyPress(EZKeySym keysym) // Une touche du clavier a ete enfoncee ou relachee

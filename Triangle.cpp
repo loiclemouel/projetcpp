@@ -25,7 +25,7 @@ void Triangle::ecrire(ostream & os) const
 {
   os << "Triangle";
   Forme::ecrire(os);
-  os << point1 << " " << point2;
+  os <<" "<< point1 << " " << point2;
 }
 
 void Triangle::dessiner(EZWindow & fenetre, bool isactive) const

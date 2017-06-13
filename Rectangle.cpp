@@ -25,7 +25,7 @@ void Rectangle::ecrire(ostream & os) const
 {
   os << "Rectangle";
   Forme::ecrire(os);
-  os << largeur << " " << hauteur;
+  os <<" "<< largeur << " " << hauteur;
 }
 
 void Rectangle::dessiner(EZWindow & fenetre, bool isactive) const

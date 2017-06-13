@@ -17,14 +17,14 @@ Cercle::~Cercle()
 
 double Cercle::perimetre() const
 {
-  return 2*rayon*3.14159265359;
+  return 2*rayon*PI;
 }
 
 void Cercle::ecrire(ostream & os) const
 {
   os << "Cercle";
   Forme::ecrire(os);
-  os << rayon;
+  os <<" "<< rayon;
 }
 
 void Cercle::dessiner(EZWindow & fenetre, bool isActive) const

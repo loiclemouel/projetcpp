@@ -44,7 +44,7 @@ void Forme::dessiner(EZWindow& fenetre, bool isActive) const
 
 void Forme::ecrire(ostream& os) const
 {
-	os << couleur << " " << ancre;
+	os <<" "<< couleur << " " << ancre;
 }
 
 ostream& operator<<(ostream  &os, const Forme& forme)
@@ -63,7 +63,7 @@ Forme * Forme::charger(istream& is)
     else if(type_forme == "Ellipse") {
 	 	return new Ellipse(is);
 	}
-	else if(type_forme == "Carré") {
+	else if(type_forme == "Carre") {
 	 	return new Carre(is);
 	 }
 	else if(type_forme == "Cercle") {

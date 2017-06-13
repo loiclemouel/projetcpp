@@ -7,6 +7,7 @@
 
 using namespace std;
 
+const double PI = 3.14;
 
 class Forme {
 	private:

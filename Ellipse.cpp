@@ -18,14 +18,14 @@ Ellipse::~Ellipse(){
 
 double Ellipse::perimetre() const
 {
-	return 2*3.14159265359*sqrt(0.5* (demihauteur*demihauteur + demilargeur*demilargeur)) ;
+	return 2*PI*sqrt(0.5* (demihauteur*demihauteur + demilargeur*demilargeur)) ;
 }
 
 void Ellipse::ecrire(ostream & os) const
 {
   os << "Ellipse";
   Forme::ecrire(os);
-  os << demilargeur << " " << demihauteur;
+  os << " "<<demilargeur << " " << demihauteur;
 }
 
 void Ellipse::dessiner(EZWindow & fenetre, bool isactive) const
